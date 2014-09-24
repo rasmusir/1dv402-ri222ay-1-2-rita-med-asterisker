@@ -10,8 +10,13 @@ namespace _1dv402_ri222ay_1_2_rita_med_asterisker
     {
         static void Main(string[] args)
         {
-            byte b = ReadOddByte("Skriv in ett tal: ", 71);
-            RenderDiamond(b);
+            do
+            {
+                Console.Clear();
+                byte b = ReadOddByte("Skriv in ett tal mellan 1 och 71: ", 71);
+                RenderDiamond(b);
+            }
+            while (IsContinuing());
         }
 
         static void RenderDiamond(byte maxCount)
