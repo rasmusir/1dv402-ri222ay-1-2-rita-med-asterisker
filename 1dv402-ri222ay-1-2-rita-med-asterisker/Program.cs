@@ -13,7 +13,7 @@ namespace _1dv402_ri222ay_1_2_rita_med_asterisker
             do
             {
                 Console.Clear();
-                byte b = ReadOddByte("Skriv in ett tal mellan 1 och 71: ", 71);
+                byte b = ReadOddByte(Strings.Input_Prompt, 71);
                 RenderDiamond(b);
             }
             while (IsContinuing());
@@ -55,13 +55,13 @@ namespace _1dv402_ri222ay_1_2_rita_med_asterisker
                     if (b >= 1 && b <= maxValue && b%2 == 1)
                         return b;
                 }
-                ShowMessage(string.Format("FEL! Det inmatade värdet är inte ett udda heltal mellan 1 och {0}", maxValue),true);
+                ShowMessage(string.Format(Strings.Number_Error, maxValue),true);
             }
         }
 
         static bool IsContinuing()
         {
-            ShowMessage("Tryck tangent för att fortsätta - Esc avsluta.");    // TODO Replace with resource later.
+            ShowMessage(Strings.Continue_Prompt);    // TODO Replace with resource later.
             if (Console.ReadKey().Key == ConsoleKey.Escape)
                 return false;
             return true;
